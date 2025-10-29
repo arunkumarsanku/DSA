@@ -1,10 +1,7 @@
 class Solution {
     public int smallestNumber(int n) {
-        int x = n;
-        while ((x & (x + 1)) != 0){
-            x++;
-        }
-        
-        return x;
+        int p = 1;
+        while (p <= n) p <<= 1;  // Find next power of 2 greater than n
+        return p - 1;            // Number with all bits = 1
     }
 }
